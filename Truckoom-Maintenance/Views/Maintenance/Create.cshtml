@@ -1,0 +1,59 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Truckoom_Maintenance.DTOS.MaintenanceActivityDto
+
+@{
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Maintenance Query Form</h5>
+            </div>
+            <div class="card-body">
+                <form asp-controller="Maintenance" asp-action="Create" method="post">
+                    <div class="form-group">
+                        <label asp-for="VehicleNumber"> Vehicle Number</label>
+                        <input asp-for="VehicleNumber" class="form-control" placeholder="Enter vehicle number" />
+                        <span asp-validation-for="VehicleNumber" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="MaintenanceType"> Maintenance Type</label>
+                        <input asp-for="MaintenanceType" class="form-control" placeholder="Enter maintenance type" />
+                        <span asp-validation-for="MaintenanceType" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ActivityDate">Maintenance Activity Date</label>
+                        <input type="date" asp-for="ActivityDate" class="form-control" placeholder="Enter activity date" />
+                        <span asp-validation-for="ActivityDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description">Maintenance Description</label>
+                        <textarea asp-for="Description" class="form-control" placeholder="Enter description"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Notes">Maintenance Notes</label>
+                        <textarea asp-for="Notes" class="form-control" placeholder="Enter notes"></textarea>
+                        <span asp-validation-for="Notes" class="text-danger"></span>
+                    </div>
+
+                    <br />
+                    <div class="card-footer text-right">
+                        <button type="submit" class="btn btn-primary">Submit</button>                 
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+        <img src="/Images/hero-section-img.png" alt="Truckhoom Hero Image" class="img-fluid" />
+    </div>
+</div>
+

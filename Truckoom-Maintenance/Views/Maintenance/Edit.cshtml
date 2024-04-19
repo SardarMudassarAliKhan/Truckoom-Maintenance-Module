@@ -1,0 +1,55 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Truckoom_Maintenance.DTOS.MaintenanceActivityEditDto
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" asp-controller="Maintenance" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="VehicleNumber"></label>
+                <input asp-for="VehicleNumber" class="form-control" />
+                <span asp-validation-for="VehicleNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="MaintenanceType"></label>
+                <input asp-for="MaintenanceType" class="form-control" />
+                <span asp-validation-for="MaintenanceType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ActivityDate"></label>
+                <input asp-for="ActivityDate" type="date" class="form-control" />
+                <span asp-validation-for="ActivityDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Notes"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+
+    <div class="col-md-6">
+        <img src="/Images/hero-section-img.png" alt="Truckhoom Hero Image" class="img-fluid" />
+    </div>
+</div>
+
+

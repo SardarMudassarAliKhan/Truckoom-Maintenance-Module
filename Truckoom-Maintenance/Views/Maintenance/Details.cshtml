@@ -1,0 +1,41 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Truckoom_Maintenance.DTOS.MaintenanceActivityEditDto
+@{
+    ViewData["Title"] = "Details";
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Maintenance Activity Details</h5>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4">Vehicle Number:</dt>
+                    <dd class="col-sm-8">@Model.VehicleNumber</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.MaintenanceType):</dt>
+                    <dd class="col-sm-8">@Model.MaintenanceType</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ActivityDate):</dt>
+                    <dd class="col-sm-8">@Model.ActivityDate</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Description):</dt>
+                    <dd class="col-sm-8">@Model.Description</dd>
+
+                    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Notes):</dt>
+                    <dd class="col-sm-8">@Model.Notes</dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <a asp-action="Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <img src="/Images/hero-section-img.png" alt="Truckhoom Hero Image" class="img-fluid" />
+    </div>
+</div>
+
